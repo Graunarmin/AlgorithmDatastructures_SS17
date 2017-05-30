@@ -5,7 +5,6 @@ public class Heap_Sort {
 
 	public static ArrayList<Character> heapsort(ArrayList <Character> list){
 			int last = list.size()-1;
-			//Heap bauen
 			makeHeap(list, last);
 
 			int i = last;
@@ -28,19 +27,19 @@ public class Heap_Sort {
 
 	public static void makeHeap(ArrayList <Character> list, int last){
 			for (int i = last/2; i >= 0; i--){
-				int greatest = i; //i ist parent
+				int parent = i; //i ist parent
 				int left = 2*i; //Kindknoten links
 				int right = left + 1; //Kindknoten rechts
 
-				if((left <= last) && (list.get(left) > list.get(greatest))){
-					greatest = left;
+				if((right <= last) && (list.get(right) > list.get(parent))){
+					parent = right;
 				}
-				if((right <= last) && (list.get(right) > list.get(greatest))){
-					greatest = right;
+				if((left <= last) && (list.get(left) > list.get(parent))){
+					parent = left;
 				}
-				if(i != greatest){
-					//wenn i nicht der größte war: tauschen
-					swap(list, i, greatest);
+				if(i != parent){
+					//wenn i nicht der größte war: tauschen, um Heap zu erzeugen
+					swap(list, i, parent);
 					makeHeap(list, i);
 				}
 			}
@@ -55,11 +54,12 @@ public class Heap_Sort {
 	public static void main(String[] args) {
 
 		ArrayList <Character> myList = new ArrayList<Character>();
-		myList.add('s');
-		myList.add('p');
-		myList.add('x');
+		myList.add('c');
+		myList.add('e');
+		myList.add('f');
 		myList.add('a');
-		myList.add('g');
+		myList.add('b');
+		myList.add('d');
 		System.out.println("The list is " + myList);
 		System.out.println("And sorted it looks like this:" + heapsort(myList));
 		System.out.println();
