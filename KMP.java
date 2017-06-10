@@ -10,12 +10,13 @@ public class KMP {
 		int m = p.length;
 		int n = t.length;
 		initnext(p);
-		for(i=0, j=0; (j<m) && (i<n); i++, j++){
-			while((j>=0) && (t[i] != p[j])){
+		for(i = 0, j = 0; (j < m) && (i < n); i++, j++){
+			while((j >= 0) && (t[i] != p[j])){
 				j = next[j];
 			}			
 		}
 		if(j == m){
+			
 			return i-m;
 		}
 		else{
@@ -29,8 +30,8 @@ public class KMP {
 		next = new int[p.length+1];
 		int m = p.length;
 		next[0] = -1;
-		for(i=0, j=-1; i<m; i++, j++, next[i]=j){
-			while((j>=0) && (p[i] != p[j])){
+		for(i = 0, j = -1; i < m; i++, j++, next[i]=j){
+			while((j >= 0) && (p[i] != p[j])){
 				j = next[j];
 			}
 		}
@@ -45,14 +46,15 @@ public class KMP {
 
 	public static void main(String[] args) {
 		String text = "Mr and Mrs Dursley, of number four, Privet Drive, were proud to say that they were perfectly normal,"
-				+ "thank you very much." + "And here Dursley apears again!";
+				+ "thank you very much. "
+				+ "\nThey were the last people you'd expect to be involved in anything strange or mysterious, "
+				+ "because they just didn't hold with such nonsense.";
 		System.out.println(text);
 		
 		char[] textArray = text.toCharArray();
-		print(textArray);
-		System.out.println(textArray[11]);
+//		System.out.println(textArray[43]);
 		
-		String pattern = "Dursley";
+		String pattern = "Drive";
 		char[] patternArray = pattern.toCharArray();
 		System.out.println("The pattern '" + pattern + "' starts at position " + kmpSearch(patternArray, textArray) + ".");
 		
