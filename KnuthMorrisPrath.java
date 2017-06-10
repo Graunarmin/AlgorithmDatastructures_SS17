@@ -20,7 +20,6 @@ public static ArrayList<Integer> positions = new ArrayList<Integer>();
 		}
 		if(j == m){
 			positions.add(i-m);
-//			return i-m;
 		}
 		}
 		return positions;
