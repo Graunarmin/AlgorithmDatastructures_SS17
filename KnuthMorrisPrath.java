@@ -56,7 +56,7 @@ public class KnuthMorrisPrath {
 	}
 
 	public static void initnext(char[] p){
-		//creates a "match table" to find out how many times the pattern can be shifted forwards in case of a mismatch
+		//creates a match table to find out how many times the pattern can be shifted forwards in case of a mismatch
 		
 		int i;
 		int j;
