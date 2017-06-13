@@ -1,4 +1,5 @@
-//I used the lecture script for help
+//Johanna Sacher, 117353, SS2017, Algorithms and Data Structures, Exercise 3
+//I used the lecture script for help, hope, that was ok
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -10,7 +11,7 @@ public class KnuthMorrisPrath {
 
 	public static void kmp(char[] p, char[] t){
 		//calls the search and prints out the results
-		
+
 		kmpSearch(p, t);
 		String pattern = new String(p); //easier to print this way
 
@@ -35,7 +36,7 @@ public class KnuthMorrisPrath {
 		/*searches the pattern by using the "next" Array, which is the match table for this pattern
 		 * created in "initnext(p)"
 		 */
-		
+
 		int i;
 		int j;
 		int m = p.length;
@@ -57,7 +58,7 @@ public class KnuthMorrisPrath {
 
 	public static void initnext(char[] p){
 		//creates a "match table" to find out how many times the pattern can be shifted forwards in case of a mismatch
-		
+
 		int i;
 		int j;
 		next = new int[p.length+1];
@@ -71,19 +72,6 @@ public class KnuthMorrisPrath {
 	}
 
 	public static void main(String[] args) {
-
-		String abc = "ababcacbabc";
-		System.out.println("This is the text: " + abc);
-		System.out.println();
-
-		char[] abcArray = abc.toCharArray();
-
-		String pattern = "abc";
-		char[] patternArray = pattern.toCharArray();
-
-		kmp(patternArray, abcArray);
-		System.out.println();
-		System.out.println();
 
 		String text = "Mr and Mrs Dursley, of number four, Privet Drive, were proud to say that they were perfectly normal,"
 				+ "thank you very much. "
@@ -105,18 +93,31 @@ public class KnuthMorrisPrath {
 		char[] pattern3Array = pattern3.toCharArray();
 		kmp(pattern3Array, textArray);
 		System.out.println();
-		
+
 		String pattern4 = "Voldemort";
 		char[] pattern4Array = pattern4.toCharArray();
 		kmp(pattern4Array, textArray);
 		System.out.println();
-		
-		
+
+
 		System.out.println("Please enter the word you would like to search in the text above: ");
 		Scanner pat = new Scanner (System.in);
 		String pattern5 = pat.nextLine();
 		char[] pattern5Array = pattern5.toCharArray();
 		kmp(pattern5Array, textArray);
+		System.out.println();
+		System.out.println();
+
+		System.out.println("Now enter a text to search in: ");
+		Scanner scan = new Scanner (System.in);
+		String text1 = scan.nextLine();
+		char[] text1Array = text1.toCharArray();
+
+		System.out.println("And now the word you want to search for: ");
+		Scanner scan2 = new Scanner (System.in);
+		String pattern = scan2.nextLine();
+		char[] patternArray = pattern.toCharArray();
+		kmp(patternArray, text1Array);
 
 	}
 
