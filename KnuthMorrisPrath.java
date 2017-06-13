@@ -1,4 +1,3 @@
-//Johanna Sacher, 117353, SS2017, Algorithms and Data Structures, Exercise 3
 //I used the lecture script for help, hope, that was ok
 
 import java.util.ArrayList;
