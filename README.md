@@ -1,2 +1,2 @@
 # Algorithmen_und_Datenstrukturen
-Lösungen für Algorithmen und Datenstrukturen
+Converter from Infix to Postfix
