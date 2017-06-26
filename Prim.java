@@ -1,4 +1,3 @@
-//Johanna Sacher, 117353, SS2017, Algorithms and Data Structures, Exercise 4
 
 import java.util.Arrays;
 import java.util.PriorityQueue;
@@ -6,9 +5,9 @@ import java.util.PriorityQueue;
 public class Prim {
 
 	public static boolean[] visited;				//markieren der besuchten Knoten
-	public static int[][] mst; 							//leere Matrix für MST
+	public static int[][] mst; 					//leere Matrix für MST
 	public static PriorityQueue<Kante> weights = new PriorityQueue<Kante>(); //zum Bestimmen der kleinsten Kante
-	public static int s = 0;								//Zähler für Spalten der Matrix
+	public static int s = 0;					//Zähler für Spalten der Matrix
 	public static int Groesse = 12; 				//Knotenanzahl
 
 
@@ -16,10 +15,10 @@ public class Prim {
 
 		int counter = 0;
 		visited = new boolean [Groesse];
-		Arrays.fill(visited, false); 					//alle Knoten als "nicht besucht" markieren
+		Arrays.fill(visited, false); 				//alle Knoten als "nicht besucht" markieren
 		mst = new int[Groesse][Groesse];
 
-		while(counter < Groesse-1){ 					//MST hat (Knotenanzahl-1) Kanten
+		while(counter < Groesse-1){ 				//MST hat (Knotenanzahl-1) Kanten
 
 			/*falls Knoten noch nicht besucht wurde:
 			*alle Kanten in die PQ schreiben und den Knoten als besucht markieren
@@ -74,7 +73,7 @@ public class Prim {
 	public static void main(String[] args) {
 
 		int[][] matrix = new int [][]{
-				{0,4,0,0,0,10,0,0,0,0,0,0},
+			  {0,4,0,0,0,10,0,0,0,0,0,0},
 			  {4,0,2,0,0,0,0,0,0,0,0,0},
 			  {0,2,0,0,7,0,5,0,0,0,0,0},
 			  {0,0,0,0,1,0,8,5,0,0,0,0},
