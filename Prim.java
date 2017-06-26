@@ -4,21 +4,21 @@ import java.util.PriorityQueue;
 
 public class Prim {
 
-	public static boolean[] visited;				//markieren der besuchten Knoten
+	public static boolean[] visited;			//markieren der besuchten Knoten
 	public static int[][] mst; 					//leere Matrix für MST
 	public static PriorityQueue<Kante> weights = new PriorityQueue<Kante>(); //zum Bestimmen der kleinsten Kante
 	public static int s = 0;					//Zähler für Spalten der Matrix
-	public static int Groesse = 12; 				//Knotenanzahl
+	public static int Groesse = 12; 			//Knotenanzahl
 
 
 	public static void prim(int[][]graph){
 
 		int counter = 0;
 		visited = new boolean [Groesse];
-		Arrays.fill(visited, false); 				//alle Knoten als "nicht besucht" markieren
+		Arrays.fill(visited, false); 			//alle Knoten als "nicht besucht" markieren
 		mst = new int[Groesse][Groesse];
 
-		while(counter < Groesse-1){ 				//MST hat (Knotenanzahl-1) Kanten
+		while(counter < Groesse-1){ 			//MST hat (Knotenanzahl-1) Kanten
 
 			/*falls Knoten noch nicht besucht wurde:
 			*alle Kanten in die PQ schreiben und den Knoten als besucht markieren
